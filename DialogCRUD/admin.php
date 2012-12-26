@@ -18,28 +18,14 @@ $this->menu=array(
 	array('label'=>'Create <?php echo $this->modelClass; ?>', 'url'=>array('create'), 'linkOptions'=>array(
 		'ajax' => array(
 			'url'=>$this->createUrl('create'),
-			'success'=>'function(r){$("#create").html(r).dialog("open"); return false;}', 
+			'success'=>'js:function(r){$("#DialogCRUDForm").html(r).dialog("option", "title", "Create <?php echo $this->modelClass; ?>").dialog("open"); return false;}',
 		),
 	)),
 );
 
 $this->beginWidget('zii.widgets.jui.CJuiDialog',array(
-        'id'=>'create',
+        'id'=>'DialogCRUDForm',
         'options'=>array(
-			'title'=>'Create <?php echo $this->modelClass; ?>',
-			'autoOpen'=>false,
-			'modal'=>true,
-			'width'=>'auto',
-			'height'=>'auto',
-			'resizable'=>'false',
-		),
-	));
-$this->endWidget();
-
-$this->beginWidget('zii.widgets.jui.CJuiDialog',array(
-        'id'=>'update',
-        'options'=>array(
-			'title'=>'Update <?php echo $this->modelClass; ?>',
 			'autoOpen'=>false,
 			'modal'=>true,
 			'width'=>'auto',
@@ -54,6 +40,7 @@ function() {
 	var url = $(this).attr('href');
     $.get(url, function(r){
         $("#update").html(r).dialog("open");
+		$("#DialogCRUDForm").html(r).dialog("option", "title", "Update <?php echo $this->modelClass; ?>").dialog("open");
     });
     return false;
 }

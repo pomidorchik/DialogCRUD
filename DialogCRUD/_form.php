@@ -52,7 +52,7 @@ foreach($this->tableSchema->columns as $column)
 								window.location.reload();
 							}
 							else{
-								$("#create").html(r).dialog("open"); return false;
+								$("#DialogCRUDForm").html(r).dialog("option", "title", "'.($model->isNewRecord ? 'Create' : 'Update').' <?php echo $this->modelClass; ?>").dialog("open"); return false;
 							}
 						}', 
 					),
