@@ -56,7 +56,7 @@ foreach($this->tableSchema->columns as $column)
         'label'=>\$model->isNewRecord ? 'Создать' : 'Сохранить изменения',
         'url'=>'#',
 		'htmlOptions'=>array(
-			'id'=>'submit_'.rand(),
+			'id'=>'submit-'.mt_rand(),
 			'ajax' => array(
 				'url'=>\$model->isNewRecord ? \$this->createUrl('create') : \$this->createUrl('update', array('id'=>\$model->".$this->tableSchema->primaryKey.")),
 				'type'=>'post',
@@ -75,7 +75,10 @@ foreach($this->tableSchema->columns as $column)
     <?php echo "<?php \$this->widget('bootstrap.widgets.TbButton', array(
         'label'=>'Закрыть',
         'url'=>'#',
-        'htmlOptions'=>array('data-dismiss'=>'modal'),
+        'htmlOptions'=>array(
+			'id'=>'btn-'.mt_rand(),
+			'data-dismiss'=>'modal'
+		),
     )); ?>\n"; ?>
 </div>
 <?php echo "<?php endif; ?>"; ?>

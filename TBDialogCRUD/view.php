@@ -53,7 +53,10 @@ foreach($this->tableSchema->columns as $column)
     <?php echo "<?php \$this->widget('bootstrap.widgets.TbButton', array(
         'label'=>'Закрыть',
         'url'=>'#',
-        'htmlOptions'=>array('data-dismiss'=>'modal'),
+        'htmlOptions'=>array(
+			'id'=>'btn-'.mt_rand(),
+			'data-dismiss'=>'modal'
+		),
     )); ?>\n" ?>
 </div>
 
