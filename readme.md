@@ -2,6 +2,9 @@
 
 CRUD на диалоговых окнах для Yii Framework. Подробное описание в блоге автора: [http://savvateev.org/blog/53/](http://savvateev.org/blog/53/).
 
+## Внимание !!!
+Для предотвращения повторной загрузки скриптов и стилей при показе AJAX форм рекомендуется воспользоваться расширением [nlsclientscript](http://www.yiiframework.com/extension/nlsclientscript/)
+
 ## Использование 
 
 *   Скопируйте папку `DialogCRUD` в директорию фреймворка `yii\framework\gii\generators\crud\templates\`
